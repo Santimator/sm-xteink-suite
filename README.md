@@ -1,4 +1,4 @@
-# X3 suite
+# SantiMator Xteink suite
 
 ## Preface
 
