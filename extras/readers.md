@@ -282,7 +282,7 @@ U+0414/U+0416/U+041A/U+041B/U+0424 and 22 lowercase letters including U+045D.
 # Run from the directory holding that TTF; the helper writes
 # LinguisticsPro-Bulgarian.ttf, sha256:
 # e2e00645c1f6045c53ccbc3e67b6e0977a08f6b3d7c4d038753b888b6fdb168f
-python3 /path/to/REPO_DIR/extras/fonts/bake_bulgarian.py
+python3 /path/to/sm-xteink-suite/extras/fonts/bake_bulgarian.py
 
 # NotoSerif-Regular.ttf is CrossPoint v1.5.0's built-in source, Noto Serif
 # 2.015, sha256 a7e8ea1ab7e7d368b001c892d6148325fffc849a46e030e55e1bdc597bbe939d.

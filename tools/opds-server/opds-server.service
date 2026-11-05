@@ -1,16 +1,16 @@
 [Unit]
 Description=Xteink suite OPDS server — serves built EPUBs to the reader over WiFi
-Documentation=https://github.com/Santimator/REPO_DIR
+Documentation=https://github.com/Santimator/sm-xteink-suite
 After=network-online.target
 Wants=network-online.target
 
 [Service]
 # Do not hand-edit the two placeholders — let the shell fill them in, from the
 # clone you are standing in. Typing a path by hand is how you end up with
-# /home/you/REPO_DIR when the clone is somewhere else entirely, and how a unit
+# /home/you/sm-xteink-suite when the clone is somewhere else entirely, and how a unit
 # survives a pull that moved the script it points at:
 #
-#   cd /path/to/REPO_DIR
+#   cd /path/to/sm-xteink-suite
 #   sed -e "s|CHANGEME_REPO|$PWD|g" -e "s|CHANGEME_USER|$(id -un)|g" \
 #       tools/opds-server/opds-server.service \
 #       | sudo tee /etc/systemd/system/opds-server.service

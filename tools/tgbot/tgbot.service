@@ -1,6 +1,6 @@
 [Unit]
 Description=Xteink suite Telegram bot — the suite, operated from a phone
-Documentation=https://github.com/Santimator/REPO_DIR
+Documentation=https://github.com/Santimator/sm-xteink-suite
 After=network-online.target
 Wants=network-online.target
 
@@ -10,7 +10,7 @@ Wants=network-online.target
 # /home/server_projects/... instead of /home/you/server_projects/..., and the
 # error that produces names a directory rather than the mistake:
 #
-#   cd /path/to/REPO_DIR
+#   cd /path/to/sm-xteink-suite
 #   mkdir -p tools/tgbot/state
 #   sed -e "s|CHANGEME_REPO|$PWD|g" -e "s|CHANGEME_USER|$(id -un)|g" \
 #       tools/tgbot/tgbot.service | sudo tee /etc/systemd/system/tgbot.service

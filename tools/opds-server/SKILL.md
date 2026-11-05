@@ -70,7 +70,7 @@ carries two placeholders — the account and the clone path — and the shell fi
 them in from the clone you are standing in, so nothing is typed by hand:
 
 ```bash
-cd /path/to/REPO_DIR
+cd /path/to/sm-xteink-suite
 sed -e "s|CHANGEME_REPO|$PWD|g" -e "s|CHANGEME_USER|$(id -un)|g" \
     tools/opds-server/opds-server.service \
     | sudo tee /etc/systemd/system/opds-server.service

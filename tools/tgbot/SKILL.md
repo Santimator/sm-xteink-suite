@@ -809,7 +809,7 @@ folder, a bot looking in the new one, and a systemd unit still pointing at
 `tgbot/scripts/bot.py`. Three moves and a re-install:
 
 ```bash
-cd /path/to/REPO_DIR
+cd /path/to/sm-xteink-suite
 mv tgbot/config.json tools/tgbot/                        # your settings
 mv tgbot/secrets/telegram.token tools/tgbot/secrets/     # your token
 mv tgbot/state/* tools/tgbot/state/ 2>/dev/null          # the delivery queue
