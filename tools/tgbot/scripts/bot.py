@@ -4657,7 +4657,7 @@ class Bot:
 
 
 def main(argv=None) -> int:
-    ap = argparse.ArgumentParser(description="the x3-suite, operated from a phone")
+    ap = argparse.ArgumentParser(description="the Xteink suite, operated from a phone")
     ap.add_argument("--config", type=Path, metavar="PATH",
                     help="configuration to read (default: tools/tgbot/config.json). "
                          "Paths inside it resolve against its own directory, so "

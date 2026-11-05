@@ -5,7 +5,7 @@ Do not hand-edit the paths in tgbot.service. Fill them in from the clone you
 are standing in, so they cannot disagree with each other or lose a directory
 along the way:
 
-  cd /path/to/x3-suite
+  cd /path/to/REPO_DIR
   mkdir -p tools/tgbot/state
   sed -e "s|CHANGEME_REPO|$PWD|g" -e "s|CHANGEME_USER|$(id -un)|g" \
       tools/tgbot/tgbot.service | sudo tee /etc/systemd/system/tgbot.service

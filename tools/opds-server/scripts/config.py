@@ -44,7 +44,7 @@ DEFAULTS: Dict = {
     # 32768 so the kernel's ephemeral range never steals it.
     "port": 6737,
     "page_size": 25,
-    "catalog_title": "X3 suite library",
+    "catalog_title": "Xteink suite library",
     "public_url": "",
     "require_auth": False,
     "auth": {

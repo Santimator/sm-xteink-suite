@@ -1,14 +1,17 @@
 # Device notes — Xteink X3 and X4 Pro
 
-The suite's EPUBs target an **Xteink X3** (ESP32-C3, ~400 KB RAM, 528×792
-e-ink) running **CrossPoint** (open-source firmware; 1.5.0 as of mid-2026),
-fed over WiFi from the suite's own OPDS server (`tools/opds-server/`) or by SD card.
-Everything below is **device-confirmed** (photos, 2026-07) unless marked
-otherwise.
+The suite targets two readers, both on **CrossPoint** (open-source firmware;
+**1.6.5** stable as of 2026-10): the **Xteink X3** (ESP32-C3, ~400 KB RAM,
+528×792 e-ink, the default everywhere) and the **Xteink X4 Pro** (ESP32-S3,
+8 MB PSRAM, 480×800, its own `-x4pro` firmware build). Books reach them over
+WiFi from the suite's own OPDS server (`tools/opds-server/`) or by SD card.
+Everything below is **device-confirmed on the X3** (photos, 2026-07) unless
+marked otherwise; X4 Pro results are marked where they exist.
 
 ## The working recipe (confirmed end-to-end)
 
-1. **Firmware:** CrossPoint **1.5.0 or newer** (web-flash from
+1. **Firmware:** CrossPoint **1.5.0 or newer** — the suite runs **1.6.5**,
+   and the X4 Pro needs its own build (`1.6.5-x4pro`) — (web-flash from
    https://crosspointreader.com/; stock is restorable the same way). Stock
    firmware ships no CJK glyphs at all — hanzi render as tofu boxes — so it is
    not an option for Chinese. 1.5.0 is the floor because it is the first
@@ -279,7 +282,7 @@ U+0414/U+0416/U+041A/U+041B/U+0424 and 22 lowercase letters including U+045D.
 # Run from the directory holding that TTF; the helper writes
 # LinguisticsPro-Bulgarian.ttf, sha256:
 # e2e00645c1f6045c53ccbc3e67b6e0977a08f6b3d7c4d038753b888b6fdb168f
-python3 /path/to/x3-suite/extras/fonts/bake_bulgarian.py
+python3 /path/to/REPO_DIR/extras/fonts/bake_bulgarian.py
 
 # NotoSerif-Regular.ttf is CrossPoint v1.5.0's built-in source, Noto Serif
 # 2.015, sha256 a7e8ea1ab7e7d368b001c892d6148325fffc849a46e030e55e1bdc597bbe939d.

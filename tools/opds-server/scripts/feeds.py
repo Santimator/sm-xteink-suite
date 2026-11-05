@@ -100,7 +100,7 @@ def _feed_header(*, feed_id: str, title: str, updated: str, self_url: str,
            f"  <updated>{updated}</updated>",
            # Ignored by CrossPoint (feed-level metadata is skipped outside
            # entries) but required for a valid Atom feed.
-           "  <author><name>x3-suite opds-server</name></author>",
+           "  <author><name>Xteink suite opds-server</name></author>",
            "  " + _link("self", self_url, self_type),
            "  " + _link("start", f"{start_url}", NAV_TYPE)]
     for link in search_links(base_url):

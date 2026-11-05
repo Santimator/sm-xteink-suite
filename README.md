@@ -6,9 +6,10 @@ Hi fellow readers! Allow me to introduce you to my humble project. In it you'll
 find sophisticated tools like an AI-assisted PDF to EPUB converter (that might
 or might not work) or something as simple as a custom Chinese font I like.
 
-This is a project I do for myself to make my life around the X3 easier and
-better — mine is an **Xteink X3 running the CrossPoint 1.5.0 RC**, and that's what
-everything here is built and tested against. Feel free to add, comment, fork,
+This is a project I do for myself to make my life around my Xteink readers
+easier and better — an **X3** and an **X4 Pro**, both on **CrossPoint 1.6.5**,
+and that's what everything here is built for. Each chapter says what was
+actually tested, on which reader and which firmware. Feel free to add, comment, fork,
 use… I am not a super huge fan of locking tools or info behind copyright stuff
 so whatever I did, it's yours to use. This is particularly true in these new
 times where AI is actually doing a lot of it and my Claude is no different from
@@ -40,7 +41,7 @@ This is a suite of tools. You'll find:
   - **`pdf2epub/`** — converts PDFs into clean EPUBs.
 - **`tools/tgbot/`** — a Telegram bot that drives all of the above from your phone.
   Optional; nothing else needs it.
-- **`extras/`** — device notes and things for the X3 itself. Special mention
+- **`extras/`** — device notes and things for the readers themselves. Special mention
   to **WenKai**, the Chinese font that makes CrossPoint render hanzi properly,
   plus whatever else I end up adding.
 - **`workspace/`** — one folder per book, inputs and `build/` outputs. **Yours:**
@@ -187,7 +188,7 @@ downloaded books from it. The self-test walks a real library through a port of
 the reader's *own* OPDS client, because a standards-valid feed can still lose
 books on this device.
 
-Serves EPUBs under `workspace/` as an OPDS catalog the X3 browses directly.
+Serves EPUBs under `workspace/` as an OPDS catalog the reader browses directly.
 Build a book and it's on the reader by the next page turn. Series metadata gets
 a **By series** view; Telegram-filed books use a confirmed compact alias such
 as `LOTR 1 - Title` while preserving the full series name. Stdlib only.
@@ -255,7 +256,8 @@ before you've dropped anything in.
 python3 tools/wallpaper-maker/scripts/push_wallpaper.py            # -> the device
 ```
 
-Nothing to configure and nothing to answer: 528×792, a four-grey PNG,
+Nothing to configure and nothing to answer: 528×792 (480×800 with
+`--device x4pro`), a four-grey PNG,
 cover-cropped, tone-stretched for e-ink. Each of those has a right answer on
 this panel, so it's already chosen — the table in the SKILL says why each one
 and not the alternative. The one real choice is `--transparent`, for a drawing
@@ -295,7 +297,7 @@ skips it in silence.
 
 ### Onto the device — which is not OPDS
 
-The catalog can't carry it. The X3's OPDS client only follows links typed
+The catalog can't carry it. CrossPoint's OPDS client only follows links typed
 exactly `application/epub+zip` and only ever saves to the SD root, so there's
 no content type it accepts and no destination it can be aimed at. A catalog is
 a pull, and this device only pulls books.
