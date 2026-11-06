@@ -1,6 +1,8 @@
 name: Export Hermes public posts to EPUB
 
 on:
+  pull_request:
+    branches: [main]
   push:
     branches:
       - chatgpt/hermes-epub-20261106
