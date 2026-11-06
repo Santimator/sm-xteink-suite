@@ -16,11 +16,20 @@ chapters=[]
 report=[]
 for url in urls:
  try:
-  response=requests.get(url,timeout=30)
-  response.raise_for_status()
-  text=trafilatura.extract(response.text,output_format='markdown',include_comments=False)
+  response=requests.get(url,timeout=30,headers={'User-Agent':'Mozilla/5.0'})
+  if response.ok:
+   text=trafilatura.extract(response.text,output_format='markdown',include_comments=False)
+   title=BeautifulSoup(response.text,'html.parser').title.get_text(' ',strip=True)
+  else:
+   print('Original site returned',response.status_code,'; trying public reader for',url,flush=True)
+   mirror=requests.get('https://r.jina.ai/'+url,timeout=55,headers={'Accept':'text/plain'})
+   mirror.raise_for_status()
+   payload=mirror.text
+   if 'Markdown Content:' in payload:
+    payload=payload.split('Markdown Content:',1)[1].strip()
+   text=payload
+   title=url.rsplit('/',1)[-1].replace('-',' ').title()
   if not text or len(text.split())<150: raise ValueError('Full article unavailable')
-  title=BeautifulSoup(response.text,'html.parser').title.get_text(' ',strip=True)
   md='# '+title+'\n\n'+text+'\n'
   fname='chapters/ch%02d.md'%(len(chapters)+1)
   (out/fname).write_text(md,encoding='utf8')
